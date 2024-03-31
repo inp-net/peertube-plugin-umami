@@ -1,6 +1,6 @@
 {
   "name": "peertube-plugin-umami",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Umami plugin that tracks page views on a PeerTube instance.",
   "engine": {
     "peertube": ">=4.2.0"
