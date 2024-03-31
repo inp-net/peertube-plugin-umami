@@ -10,17 +10,8 @@ export {
 }
 
 async function init (registerHook, peertubeHelpers) {
-  const success = await initMatomo(peertubeHelpers)
+  const success = await initUmami(peertubeHelpers)
   if (!success) return
-
-  // registerHook({
-  //   target: 'action:router.navigation-end',
-  //   handler: function (params) {
-  //     window._paq.push(['setDocumentTitle', window.document.title]);
-  //     window._paq.push(['setCustomUrl', params.path]);
-  //     window._paq.push(['trackPageView']);
-  //   }
-  // })
 
   registerHook({
     target: 'action:video-watch.player.loaded',
@@ -29,4 +20,3 @@ async function init (registerHook, peertubeHelpers) {
     }
   })
 }
-
