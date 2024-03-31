@@ -1,0 +1,39 @@
+{
+  "name": "peertube-plugin-umami",
+  "version": "0.1.0",
+  "description": "Umami plugin that tracks page views on a PeerTube instance.",
+  "engine": {
+    "peertube": ">=4.2.0"
+  },
+  "keywords": [
+    "peertube",
+    "plugin"
+  ],
+  "scripts": {
+    "build": "esbuild client/common-client-plugin.js --minify --bundle --format=esm --outfile=dist/common-client-plugin.js --target=safari11 && esbuild client/embed-client-plugin.js --minify --bundle --format=esm --outfile=dist/embed-client-plugin.js --target=safari11"
+  },
+  "homepage": "https://github.com/inp-net/peertube-plugin-umami",
+  "author": "Chocobozzz",
+  "bugs": "https://github.com/inp-net/peertube-plugin-umami/issues",
+  "library": "./main.js",
+  "staticDirs": {},
+  "css": [],
+  "clientScripts": [
+    {
+      "script": "dist/common-client-plugin.js",
+      "scopes": [
+        "common"
+      ]
+    },
+    {
+      "script": "dist/embed-client-plugin.js",
+      "scopes": [
+        "embed"
+      ]
+    }
+  ],
+  "translations": {},
+  "devDependencies": {
+    "esbuild": "^0.14.27"
+  }
+}
